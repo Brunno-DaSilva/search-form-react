@@ -1,6 +1,6 @@
 import React from "react";
 
-const ListPage = () => {
+const ListPage = ({ searchResults }) => {
   return (
     <div>
       <p>List results</p>

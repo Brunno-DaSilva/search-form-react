@@ -3,6 +3,8 @@ import { getPosts } from "./API/axios";
 
 import "./App.css";
 
+import SearchBar from "./components/SearchBar";
+
 function App() {
   const [posts, setPosts] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
@@ -20,6 +22,7 @@ function App() {
   return (
     <div className="app">
       <h1>App Component</h1>
+      <SearchBar posts={posts} setSearchResults={setSearchResults} />
     </div>
   );
 }

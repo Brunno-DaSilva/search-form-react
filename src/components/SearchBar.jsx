@@ -24,7 +24,7 @@ const SearchBar = ({ posts, setSearchResults }) => {
           className="search__input"
           id="search"
           type="text"
-          onChange={handleChange}
+          onChange={handleSearchChange}
         />
         <button>
           <FontAwesomeIcon icon={faMagnifyingGlass}></FontAwesomeIcon>
