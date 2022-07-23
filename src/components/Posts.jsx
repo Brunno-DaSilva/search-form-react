@@ -1,9 +1,9 @@
-const Post = ({ post }) => {
+const Post = ({ region, name, flags }) => {
   return (
     <article>
-      <h2>{post.title}</h2>
-      <p>{post.body}</p>
-      <p>Post ID: {post.id}</p>
+      <img src={flags} alt={name.common} />
+      <h2>{name}</h2>
+      <p>{region}</p>
     </article>
   );
 };

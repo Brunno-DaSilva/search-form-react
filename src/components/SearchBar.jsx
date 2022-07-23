@@ -8,12 +8,12 @@ const SearchBar = ({ posts, setSearchResults }) => {
 
   const handleSearchChange = (e) => {
     if (!e.target.value) return setSearchResults(posts);
+    const resultsArray = posts.filter(({ name, region }) => {
+      let wordToMatch = e.target.value;
+      const regex = new RegExp(wordToMatch, "gi");
+      return name.common.match(regex) || region.match(regex);
+    });
 
-    const resultsArray = posts.filter(
-      (post) =>
-        post.title.includes(e.target.value) ||
-        post.body.includes(e.target.value)
-    );
     setSearchResults(resultsArray);
   };
 
@@ -27,7 +27,12 @@ const SearchBar = ({ posts, setSearchResults }) => {
           onChange={handleSearchChange}
         />
         <button>
-          <FontAwesomeIcon icon={faMagnifyingGlass}></FontAwesomeIcon>
+          <FontAwesomeIcon
+            onclick={() => {
+              handleSubmit();
+            }}
+            icon={faMagnifyingGlass}
+          />
         </button>
       </form>
     </header>
