@@ -26,9 +26,9 @@ const SearchBar = ({ posts, setSearchResults }) => {
           type="text"
           onChange={handleSearchChange}
         />
-        <button>
+        <button className="search__button">
           <FontAwesomeIcon
-            onclick={() => {
+            onClick={() => {
               handleSubmit();
             }}
             icon={faMagnifyingGlass}
