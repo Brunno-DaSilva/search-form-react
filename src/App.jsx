@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div className="app">
-      <h1>App Component</h1>
+      <h1>Search Form</h1>
       <SearchBar posts={posts} setSearchResults={setSearchResults} />
       <ListPage searchResults={searchResults} />
     </div>
